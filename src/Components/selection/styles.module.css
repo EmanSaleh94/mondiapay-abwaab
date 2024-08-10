@@ -1,0 +1,38 @@
+.selectionGroup {
+  width: 100%;
+  margin: auto;
+  padding: 0.5rem;
+}
+.selectionFieldParent {
+  width: 100%;
+  margin: auto;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  background-color: #e9f3ff;
+  border-radius: 8px;
+}
+.selectionFieldParent Button p {
+  padding: 0;
+  margin: 0;
+}
+.selectionFieldParent Button p.expanded {
+  padding: 0;
+  margin: 0;
+  color: var(--faded-blue);
+  font-family: "dubai bold";
+}
+
+ul {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+ul li {
+  list-style-type: none !important;
+  background-color: white;
+  width: 100%;
+  margin-top: 0.9rem;
+  margin-bottom: 0.9rem;
+  border-radius: 8px;
+  padding: 8px;
+}

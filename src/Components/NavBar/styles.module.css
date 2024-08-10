@@ -1,0 +1,35 @@
+.navStyle {
+  background-color: #fff !important;
+  padding: 0 !important;
+}
+.responsiveLogo {
+  width: 214px;
+}
+@media screen and (max-width: 575px) {
+  .responsiveLogo {
+    width: 114px; /* Size for small devices */
+  }
+}
+@media screen and (min-width: 576px) and (max-width: 766px) {
+  .responsiveLogo {
+    width: 139px; /* Size for small devices */
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .responsiveLogo {
+    width: 164px; /* Size for medium devices */
+  }
+}
+
+@media screen and (min-width: 992px) and(max-width: 1199px) {
+  .responsiveLogo {
+    width: 189px; /* Size for large devices */
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .responsiveLogo {
+    width: 214px; /* Size for extra large devices */
+  }
+}

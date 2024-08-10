@@ -1,0 +1,6 @@
+@media screen and (max-width: 885px) {
+  .btnResponsive {
+    display: flex !important;
+    flex-wrap: wrap !important;
+  }
+}

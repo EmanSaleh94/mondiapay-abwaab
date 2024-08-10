@@ -1,0 +1,15 @@
+.containerStyle{
+    width: 38%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media screen and (max-width: 768px) {
+        width: 80%;
+    }
+}
+.containerStyle p:first-child {
+    font-size: 1.3rem;
+    text-align: center;
+}

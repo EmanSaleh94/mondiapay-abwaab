@@ -1,0 +1,84 @@
+.cardStyle{
+    width: 80%;
+    margin: 0.5rem;
+    border-color: var(--border-color) !important;
+
+}
+.cardTitle{
+    display: flex;
+    align-items:center ;
+
+}
+.cardTitle div{
+
+    display: flex;
+    align-items: baseline;
+}
+.cardBodyStyle{
+    padding: 0.5rem 0.4rem!important;
+    border-radius: 20px;
+
+}
+.descriptionStyle{
+    color: var(--faded-gray);
+    text-align: center;
+    font-family: "dubai light",sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 26px;
+}
+.cardHeaderStyle{
+    font-family: 'dubai medium',sans-serif !important;
+    border-color: var(--border-color) !important;
+    background-color: transparent !important;
+}
+.fontStyle{
+    font-size: 12px;
+}
+.delStyle{
+    font-size: 16px;
+    color: var(--del-color);
+    text-align: right;
+    font-family: "dubai light",sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 40px;
+
+}
+.priceStyle{
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 40px;
+    color: var(--faded-blue);
+    padding-left: 4px;
+}
+.currencyStyle{
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: var(--faded-blue);
+}
+.cardTextStyle{
+    text-align: right;
+    font-family: 'dubai standard',sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+}
+.buttonStyle{
+    width:100%!important;
+    /*margin-top: auto!important;*/
+}
+.CheckCircleFillStyle{
+    margin-left:4px;
+    font-size:16px !important;
+
+}
+.footerStyle{
+    border: 0!important;
+    background-color: transparent!important;
+    padding: 1rem  0.45rem !important;
+
+}

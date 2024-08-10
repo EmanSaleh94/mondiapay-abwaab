@@ -1,0 +1,100 @@
+.stepperWrapper {
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  width: 55%;
+  direction: rtl;
+  /* background-color: bisque; */
+  padding-top: 4px;
+}
+@media screen and (max-width: 768px) {
+  .stepperWrapper {
+    width: 90%;
+    background-color: yellow;
+  }
+}
+.stepperItem {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+
+  @media (max-width: 768px) {
+    font-size: 12px;
+  }
+}
+
+.stepperItem::before {
+  position: absolute;
+  content: "";
+  border-bottom: 2px solid #ccc;
+  width: 70%;
+  top: 20px;
+  right: -35%;
+  z-index: 2;
+}
+
+.stepperItem::after {
+  position: absolute;
+  content: "";
+  border-bottom: 2px solid #ccc;
+  width: 70%;
+  top: 20px;
+  right: 65%;
+  z-index: 2;
+}
+
+.stepperItem .stepCounter {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #bfdbfe;
+  color: #60a5fa;
+  margin-top: 8px;
+  margin-bottom: 3px;
+}
+
+.stepperItem.active .stepCounter {
+  color: white;
+  background-color: var(--faded-blue);
+}
+.stepName {
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+.stepName.active {
+  color: var(--faded-blue);
+}
+
+.stepperItem.completed .stepCounter {
+  color: white;
+  background-color: var(--faded-blue);
+}
+.stepName.completed {
+  color: var(--faded-blue);
+}
+
+/* .stepperItem.completed::after {
+  position: absolute;
+  content: "";
+  border-bottom: 2px solid #3b82f6;
+  width: 70%;
+  top: 20px;
+  left: 65%;
+  z-index: 3;
+} */
+
+.stepperItem:first-child::before {
+  content: none;
+}
+.stepperItem:last-child::after {
+  content: none;
+}

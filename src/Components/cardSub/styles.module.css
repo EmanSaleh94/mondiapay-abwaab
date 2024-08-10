@@ -1,0 +1,105 @@
+.delStyle{
+    font-size: 16px;
+    color: var(--del-color);
+    text-align: right;
+    font-family: "dubai light",sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+
+}
+
+.priceStyle{
+    text-align: right;
+    font-family: 'dubai standard', sans-serif;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 25px;
+    color: var(--faded-blue);
+    padding-left: 4px;
+}
+
+.currencyStyle{
+    font-family: 'dubai standard', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: var(--faded-blue);
+    text-align: center;
+    margin:0!important;
+}
+.footerStyle{
+    border: 0!important;
+    background-color: transparent!important;
+    padding: 1rem  0.45rem !important;
+
+}
+.cardStyle {
+    border-radius: 14px!important;
+    padding: 0.3rem;
+    margin: 1rem auto;
+    width: 32%;
+}
+.cardHeaderStyle {
+    background-color: transparent!important;
+    border: none!important;
+    padding-bottom: 0;
+    font-family: "dubai standard",sans-serif;
+    text-align: right;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 26px;
+}
+.cardBodyStyle {
+    padding-top: 0.5rem;
+}
+.cardTitleStyle {
+    display: inline-flex;
+    align-items: flex-end;
+
+}
+.priceContainer{
+    display: inline-flex;
+    flex-direction: column;
+}
+.cardTextStyle{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+}
+.cardTextStyle p {
+    margin: 0!important;
+    color: var(--faded-gray);
+    font-family: 'dubai light',sans-serif;
+    text-align: right;
+    font-size: 16px !important;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+}
+.buttonStyle {
+    width: 100%;
+    border-radius: 0.5rem;
+}
+@media (max-width: 768px) {
+    .cardStyle {
+        border-radius: 14px!important;
+        padding: 0.3rem;
+        margin: 1rem auto;
+        width: 100%;
+    }
+
+}
+
+@media screen and (min-width: 769px)and (max-width: 1180px) {
+    .cardStyle {
+        border-radius: 14px!important;
+        padding: 0.3rem;
+        margin: 1rem auto;
+        width: 48%;
+    }
+
+}

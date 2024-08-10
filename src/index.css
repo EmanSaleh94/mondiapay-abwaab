@@ -1,0 +1,41 @@
+/*  --dark-blue  for e5tar safak  */
+@font-face {
+  font-family: "dubai standard";
+  src: url(./assets/fonts/Dubai-Regular.ttf);
+}
+
+@font-face {
+  font-family: "dubai light";
+  src: url(./assets/fonts/Dubai-Light.ttf);
+}
+@font-face {
+  font-family: "dubai medium";
+  src: url(./assets/fonts/Dubai-Medium.ttf);
+}
+@font-face {
+  font-family: "dubai bold";
+  src: url(./assets/fonts/Dubai-Bold.ttf);
+}
+:root {
+  --faded-blue: #3b82f6;
+  --text-blue: #2563eb;
+  --faded-gray:#64748B;
+  --violte: #F5F3FF;
+  --violte-dark:#8B5CF6;
+  --light-blue:#EFF6FF;
+  --light-green: #ECFEFF;
+  --teal:#14B8A6;
+  --del-color:#EF4444;
+  --border-color:#E2E8F0;
+
+}
+
+body {
+  margin: 0;
+  display: flex;
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: dubai standard, sans-serif !important;
+  direction: rtl;
+  text-align: right;
+}

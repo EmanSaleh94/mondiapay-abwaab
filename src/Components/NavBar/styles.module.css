@@ -8,6 +8,14 @@
 @media screen and (max-width: 575px) {
   .responsiveLogo {
     width: 114px; /* Size for small devices */
+
+  }
+  .logoPositionInMobile{
+    display: flex !important;
+    justify-content: center!important;
+    padding: 0!important;
+    margin-left: 2rem!important;
+
   }
 }
 @media screen and (min-width: 576px) and (max-width: 766px) {

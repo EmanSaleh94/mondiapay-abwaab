@@ -20,7 +20,7 @@ function Home() {
                 <Stepper/>
                 <Routes>
                     <Route  path="/" element={ <SelectClass/> }/>
-                    <Route  path="plan" element={   <SelectPlan /> }/>
+                    <Route  path="selectplan" element={   <SelectPlan /> }/>
                     <Route  path="subscription" element={  <ChooseSubscription/> }/>
                     <Route  path="payment" element={  <Payment/> }/>
                 </Routes>

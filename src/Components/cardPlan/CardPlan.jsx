@@ -1,10 +1,10 @@
 import React from "react";
-import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import {CheckCircleFill} from "react-bootstrap-icons";
 
 import styles from './styles.module.css';
 import orangeLogo from "../../assets/images/orange.svg";
+import {Link} from "react-router-dom";
 
 const {
     cardStyle,
@@ -14,7 +14,6 @@ const {
     descriptionStyle,
     currencyStyle,
     cardTextStyle,
-    buttonStyle,
     CheckCircleFillStyle,
     cardBodyStyle,
     cardHeaderStyle,
@@ -64,19 +63,21 @@ function CardPlan({cardHeader, height, backgroundColor, btnCheckColor}) {
                     </Card.Text>
 
 
-
                 </Card.Body>
                 <Card.Footer className={footerStyle}>
-                    <Button
-                        className={buttonStyle}
-                        style={{backgroundColor: `var(${btnCheckColor} )`, borderColor: `var(${btnCheckColor} )`}}
-                    >
-                        اختر الباقة
-                    </Button>
+                    <Link style={{
+                        color: 'white',
+                        textDecoration: 'none',
+                        backgroundColor: `var(${btnCheckColor} )`,
+                        borderColor: `var(${btnCheckColor} )`
+                    }} to="/subscription" className="btn btn-primary w-100"> اختر الباقة
+                    </Link>
+
                 </Card.Footer>
             </Card>
         </>
-    );
+    )
+        ;
 }
 
 export default CardPlan;

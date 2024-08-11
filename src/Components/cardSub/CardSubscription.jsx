@@ -1,11 +1,11 @@
 import React from 'react';
-import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import styles from './styles.module.css'
 
 import orangeLogo from "../../assets/images/orange.svg";
+import {Link} from "react-router-dom";
 
-const { delStyle, priceStyle, currencyStyle, footerStyle,cardStyle,cardHeaderStyle,cardBodyStyle,cardTitleStyle,priceContainer,cardTextStyle,buttonStyle} = styles
+const { delStyle, priceStyle, currencyStyle, footerStyle,cardStyle,cardHeaderStyle,cardBodyStyle,cardTitleStyle,priceContainer,cardTextStyle} = styles
 
 function CardSubscription(props) {
     return (
@@ -35,7 +35,8 @@ function CardSubscription(props) {
                             ادفع لمرة واحدة
                         </p>
                     </Card.Text>
-                    <Button variant="outline-primary" className={buttonStyle}>اختر الاشتراك</Button>
+                    <Link to="/payment" className={`w-100 btn btn-outline-primary mt-2`}> اختر الاشتراك</Link>
+
 
                 </Card.Footer>
 

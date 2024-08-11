@@ -35,4 +35,5 @@ ul li {
   margin-bottom: 0.9rem;
   border-radius: 8px;
   padding: 8px;
+  cursor: pointer;
 }

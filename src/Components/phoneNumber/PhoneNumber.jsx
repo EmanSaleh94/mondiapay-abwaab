@@ -4,11 +4,11 @@ import InputGroup from "react-bootstrap/InputGroup";
 
 import egyFlag from "../../assets/images/egyFlag.svg";
 
-function PhoneNumber() {
+function PhoneNumber({titleInfo}) {
   return (
     <>
       <div style={{ width: "100%", padding: "0.5rem" }}>
-        <Form.Label htmlFor="basic-url">ادخل رقم للتواصل</Form.Label>
+        <Form.Label htmlFor="basic-url">{titleInfo}</Form.Label>
         <InputGroup className="mb-3 m-auto" dir="ltr">
           <InputGroup.Text id="basic-addon1">
             <img src={egyFlag} alt="" />
@@ -18,7 +18,9 @@ function PhoneNumber() {
             placeholder="1XXXXXXXXX"
             aria-label="PhoneNumber"
             aria-describedby="basic-addon1"
+
             type="number"
+
           />
         </InputGroup>
       </div>

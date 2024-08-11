@@ -1,0 +1,44 @@
+.modalTitle {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.orangeCashLogoSize {
+    width: 90px;
+}
+.modalBodyStyle{
+    padding: 2rem!important;
+
+}
+.modalBodyStyle p{
+    font-family: 'dubai bold';
+    margin-top: 1rem;
+
+}
+
+.paraStyle {
+    font-family: 'dubai bold';
+    text-align: right;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 36px;
+}
+
+.informationList{
+    text-align: right;
+    font-family: 'dubai standard',sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    /*line-height: 36px;*/
+    display: list-item !important;
+    margin-right: 1rem !important;
+}
+.informationList li{
+    list-style-type: disc !important;
+    margin:0;
+
+}
+

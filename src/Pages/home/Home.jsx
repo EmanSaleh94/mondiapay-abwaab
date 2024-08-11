@@ -4,6 +4,9 @@ import Stepper from "../../Components/stepper/Stepper.jsx";
 import SelectPlan from "../selectPlan/SelectPlan.jsx";
 import SelectClass from "../selectClass/SelectClass.jsx";
 import ChooseSubscription from "../chooseSubscription/ChooseSubscription.jsx";
+import Payment from "../payment/Payment.jsx";
+
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 
 
@@ -11,11 +14,17 @@ import ChooseSubscription from "../chooseSubscription/ChooseSubscription.jsx";
 function Home() {
     return (
         <>
-            <Nav/>
-            <Stepper/>
-            {/*<SelectClass/>*/}
-            {/*<SelectPlan />*/}
-            <ChooseSubscription/>
+
+            <Router>
+                <Nav/>
+                <Stepper/>
+                <Routes>
+                    <Route  path="/" element={ <SelectClass/> }/>
+                    <Route  path="plan" element={   <SelectPlan /> }/>
+                    <Route  path="subscription" element={  <ChooseSubscription/> }/>
+                    <Route  path="payment" element={  <Payment/> }/>
+                </Routes>
+            </Router>
         </>
     );
 }

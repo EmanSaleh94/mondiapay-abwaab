@@ -10,8 +10,14 @@
 }
 @media screen and (max-width: 768px) {
   .stepperWrapper {
+    width: 70%;
+
+  }
+}
+@media screen and (max-width: 480px) {
+  .stepperWrapper {
     width: 90%;
-    background-color: yellow;
+
   }
 }
 .stepperItem {

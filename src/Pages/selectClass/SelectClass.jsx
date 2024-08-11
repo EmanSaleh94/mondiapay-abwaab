@@ -11,12 +11,12 @@ const {containerStyle}=styles;
 function SelectClass(props) {
     return (
         <>
-            <VideoLink/>
+            <VideoLink btnWidth={'w-25'}/>
             <div className={containerStyle}>
                 <p>اختر صفك</p>
                 <Selection selectionHeader={"اختر صفك"}/>
                 <Selection selectionHeader={"اختر برنامج"}/>
-                <PhoneNumber/>
+                <PhoneNumber titleInfo={'ادخل رقم للتواصل'}/>
                 <Button style={{width: "75%", marginTop: "5rem"}}>التالي</Button>
             </div>
 

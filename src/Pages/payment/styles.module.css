@@ -1,0 +1,118 @@
+.parentContainer{
+    width: 40%;
+    height: 74vh;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem;
+    /*background-color: #aeb1b3;*/
+}
+.orangeCashLogo{
+    margin: auto !important;
+    margin-bottom: 0.5rem !important;
+    width: 120px!important;
+
+}
+.subscribeButton{
+    width: 80% !important;
+    margin: auto !important;
+    margin-bottom: 2rem !important;
+    font-family: 'dubai standard', sans-serif !important;
+}
+.priceInformation{
+    text-align: center !important;
+    font-family: "dubai standard",sans-serif;
+}
+.informationSteps{
+    display: flex !important;
+    flex-direction: row !important;
+    margin: auto !important;
+    width: 100%;
+   justify-content: center;
+
+}
+.informationStepsPara{
+    text-decoration: underline;
+    margin: 0;
+    margin-right: 5px;
+    font-size: 14px;
+    font-family: 'dubai light', sans-serif;
+    cursor: pointer;
+}
+.mondiaPayLogoContainer{
+    margin-top: auto;
+    display: flex;
+    justify-content: center!important;
+}
+
+@media screen and (max-width: 1024px) {
+    .parentContainer {
+        width: 60%; /* Adjusted width for medium screens */
+    }
+    .orangeCashLogo {
+        width: 100px !important; /* Adjusted width */
+        margin: 1rem auto !important;
+    }
+    .subscribeButton {
+        width: 70% !important; /* Adjusted button width */
+        margin: 1rem auto !important;
+    }
+    .informationSteps {
+        flex-direction: row !important; /* Stack steps vertically */
+        align-items: center;
+        margin: 1rem 0 6rem 0!important;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .parentContainer {
+        width: 80%; /* Adjusted width for smaller screens */
+
+    }
+    .orangeCashLogo {
+        width: 80px !important; /* Adjusted width */
+        margin: 1rem auto !important;
+    }
+    .subscribeButton {
+        width: 90% !important; /* Adjusted button width */
+        margin: 1rem auto !important;
+    }
+    .informationSteps {
+        flex-direction: row !important; /* Stack steps vertically */
+        align-items: center;
+        margin: 1rem 0 6rem 0!important;
+
+    }
+    .informationStepsPara {
+        font-size: 12px; /* Smaller text */
+
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .parentContainer {
+        width: 90%; /* Adjusted width for very small screens */
+    }
+    .orangeCashLogo {
+        width: 60px !important; /* Adjusted width */
+        margin: 1rem auto !important;
+    }
+    .subscribeButton {
+        width: 100% !important; /* Full width button */
+        margin: 1rem auto !important;
+    }
+    .informationSteps {
+        flex-direction: row !important; /* Stack steps vertically */
+        align-items: center;
+        margin: 1rem 0 6rem 0!important;
+    }
+    .informationStepsPara {
+        font-size: 10px; /* Smaller text */
+    }
+    .priceInformation {
+        font-size: 14px; /* Adjusted text size */
+    }
+}
+
+

@@ -10,7 +10,16 @@ const { selectionFieldParent, selectionGroup, expanded } = styles;
 
 function Selection({ selectionHeader }) {
   const [open, setOpen] = useState(false);
-  const [chooseSelection, setChooseSelection] = useState(null);
+
+
+  const [inputValue, setInputValue] = useState('');
+
+  const handleInputText = (event) => {
+    setInputValue(event.target.textContent);
+    setOpen(!open)
+  };
+
+
 
   const btnStyle = {
     backgroundColor: "#e9f3ff",
@@ -29,14 +38,14 @@ function Selection({ selectionHeader }) {
             aria-expanded={open}
             style={btnStyle}
           >
-            <p className={open ? expanded : ""}>{selectionHeader}</p>
+            <p className={open ? expanded : ""}>{inputValue===''? selectionHeader:inputValue }</p>
             <img src={open ? upArrow : downArrow} alt="" width={20} />
           </Button>
           <Collapse in={open}>
             <ul className="selectionList" id="example-collapse-text">
-              <li>المرحلة الابتدائية</li>
-              <li>المرحلة المتوسطة</li>
-              <li>المرحلة الثانوية</li>
+              <li onClick={(event)=>{handleInputText(event)}}>المرحلة الابتدائية</li>
+              <li onClick={(event)=>{handleInputText(event)}}>المرحلة المتوسطة</li>
+              <li onClick={(event)=>{handleInputText(event)}}>المرحلة الثانوية</li>
             </ul>
           </Collapse>
         </div>

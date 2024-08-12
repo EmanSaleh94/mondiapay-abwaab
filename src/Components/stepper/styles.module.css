@@ -5,18 +5,36 @@
   margin-bottom: 0.5rem;
   width: 55%;
   direction: rtl;
-  /* background-color: bisque; */
+   /*background-color: bisque;*/
   padding-top: 4px;
+}
+.backButtonWrapper{
+  margin-left: 2rem!important;
+  cursor: pointer !important;
+  width: 1rem !important;
+  height: 1rem;
+  background-image: url('../../assets/images/backButton.svg');
+  background-position: center;
+  background-repeat: no-repeat;
 }
 @media screen and (max-width: 768px) {
   .stepperWrapper {
     width: 70%;
 
   }
+  .backButtonWrapper{
+    margin-left: 0!important;
+    width: 1rem !important;
+    height: 1rem!important;
+    background-image: url('../../assets/images/back-button-small.svg');
+
+  }
+
 }
 @media screen and (max-width: 480px) {
   .stepperWrapper {
     width: 90%;
+    margin-left: 0;
 
   }
 }
@@ -104,3 +122,5 @@
 .stepperItem:last-child::after {
   content: none;
 }
+
+

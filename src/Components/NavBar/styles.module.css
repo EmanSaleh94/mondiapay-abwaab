@@ -1,6 +1,7 @@
 .navStyle {
   background-color: #fff !important;
   padding: 0 !important;
+  position: relative;
 }
 .responsiveLogo {
   width: 214px;
@@ -40,4 +41,21 @@
   .responsiveLogo {
     width: 214px; /* Size for extra large devices */
   }
+}
+
+.backButtonWrapper{
+  position: absolute;
+  left: 0;
+  /*margin-left: 2rem!important;*/
+  cursor: pointer !important;
+  width: 2rem !important;
+  height: 1rem;
+
+
+  background-image: url('../../assets/images/backButton.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+
+
+
 }

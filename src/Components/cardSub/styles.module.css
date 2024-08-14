@@ -70,7 +70,7 @@
     align-items: center;
     margin: 0;
 }
-.cardTextStyle p {
+.cardTextStyle span {
     margin: 0!important;
     color: var(--faded-gray);
     font-family: 'dubai light',sans-serif;

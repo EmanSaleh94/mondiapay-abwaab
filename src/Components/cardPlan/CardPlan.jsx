@@ -1,10 +1,11 @@
-import React from "react";
+import React, {useContext, useEffect} from "react";
 import Card from "react-bootstrap/Card";
 import {CheckCircleFill} from "react-bootstrap-icons";
 
 import styles from './styles.module.css';
 import orangeLogo from "../../assets/images/orange.svg";
 import {Link} from "react-router-dom";
+import {DataContext} from "../../context/DataContext.jsx";
 
 const {
     cardStyle,
@@ -22,19 +23,44 @@ const {
 } = styles
 
 
-function CardPlan({cardHeader, height, backgroundColor, btnCheckColor}) {
+function CardPlan({backgroundColor, btnCheckColor, packageDetails}) {
+
+    const getPlanWithSmallestPrice = (plansData) => {
+        let smallestPlan = null;
+        let smallestPrice = Infinity;
+
+        plansData.forEach(plan => {
+            if (plan.Discounted < smallestPrice) {
+                smallestPrice = plan.Discounted;
+                smallestPlan = plan;
+            }
+        });
+
+        return smallestPlan;
+    }
+    const planWithSmallestPrice = getPlanWithSmallestPrice(packageDetails.plans)
+
+    const {collectedData, collectData} = useContext(DataContext);
+
+
+    const handlePlanSelection = () => {
+        console.log("fireeeeeed")
+        collectData({packageDetails})
+    }
+
+
     return (
         <>
-            <Card className={cardStyle} style={{height: `${height}%`, backgroundColor: `var(${backgroundColor})`}}>
-                <Card.Header className={cardHeaderStyle}>{cardHeader}</Card.Header>
+            <Card className={cardStyle} style={{backgroundColor: `var(${backgroundColor})`}}>
+                <Card.Header className={cardHeaderStyle}>{packageDetails.name}</Card.Header>
                 <Card.Body className={cardBodyStyle}>
                     <span className={fontStyle}>ابتداء من</span>
 
                     <Card.Title className={cardTitle}>
                         <img src={orangeLogo} alt=""/>
                         <div>
-                            <del className={delStyle}>40.0</del>
-                            <span className={priceStyle}>35.0</span>
+                            <del className={delStyle}>{planWithSmallestPrice.Price}</del>
+                            <span className={priceStyle}>{planWithSmallestPrice.Discounted}</span>
 
                             <p className={currencyStyle}>
                                 جنيه مصري
@@ -44,28 +70,37 @@ function CardPlan({cardHeader, height, backgroundColor, btnCheckColor}) {
 
                     </Card.Title>
 
+                    {/*TODO to be changed to state*/}
+                    {packageDetails.Benefits.map((entry, index) => (
+                        <Card.Text className={cardTextStyle} key={index}>
+                            <CheckCircleFill color={`var(${btnCheckColor})`} className={CheckCircleFillStyle}/>
+                            {entry}
+                        </Card.Text>
 
-                    <Card.Text className={cardTextStyle}>
-                        <CheckCircleFill color={`var(${btnCheckColor})`} className={CheckCircleFillStyle}/>
-                        شاهد جميع الدروس لجميع مواد منهاجك
-                    </Card.Text>
-
-
-                    <Card.Text className={cardTextStyle}>
-                        <CheckCircleFill color={`var(${btnCheckColor})`} className={CheckCircleFillStyle}/>
-                        جاوب أسئلة و إختبارات جميع المواد{" "}
-                    </Card.Text>
+                    ))}
 
 
-                    <Card.Text className={cardTextStyle}>
-                        <CheckCircleFill color={`var(${btnCheckColor})`} className={CheckCircleFillStyle}/>
-                        جاوب أسئلة و إختبارات جميع المواد{" "}
-                    </Card.Text>
+                    {/*<Card.Text className={cardTextStyle}>*/}
+                    {/*    <CheckCircleFill color={`var(${btnCheckColor})`} className={CheckCircleFillStyle}/>*/}
+                    {/*    شاهد جميع الدروس لجميع مواد منهاجك*/}
+                    {/*</Card.Text>*/}
+
+
+                    {/*<Card.Text className={cardTextStyle}>*/}
+                    {/*    <CheckCircleFill color={`var(${btnCheckColor})`} className={CheckCircleFillStyle}/>*/}
+                    {/*    جاوب أسئلة و إختبارات جميع المواد{" "}*/}
+                    {/*</Card.Text>*/}
+
+
+                    {/*<Card.Text className={cardTextStyle}>*/}
+                    {/*    <CheckCircleFill color={`var(${btnCheckColor})`} className={CheckCircleFillStyle}/>*/}
+                    {/*    جاوب أسئلة و إختبارات جميع المواد{" "}*/}
+                    {/*</Card.Text>*/}
 
 
                 </Card.Body>
                 <Card.Footer className={footerStyle}>
-                    <Link style={{
+                    <Link onClick={handlePlanSelection} style={{
                         color: 'white',
                         textDecoration: 'none',
                         backgroundColor: `var(${btnCheckColor} )`,

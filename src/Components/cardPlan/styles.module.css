@@ -1,8 +1,16 @@
 .cardStyle{
-    width: 80%;
+    width: 40%;
     margin: 0.5rem;
     border-color: var(--border-color) !important;
+    /*position: relative;*/
 
+
+}
+@media screen and (max-width: 768px){
+    .cardStyle{
+        width: 80%;
+
+    }
 }
 .cardTitle{
     display: flex;
@@ -17,6 +25,7 @@
 .cardBodyStyle{
     padding: 0.5rem 0.4rem!important;
     border-radius: 20px;
+    min-height: 50vh
 
 }
 .descriptionStyle{
@@ -44,6 +53,7 @@
     font-style: normal;
     font-weight: 500;
     line-height: 40px;
+    margin-left: 3px;
 
 }
 .priceStyle{
@@ -80,5 +90,10 @@
     border: 0!important;
     background-color: transparent!important;
     padding: 1rem  0.45rem !important;
+    /*position: absolute;*/
+    /*bottom: 0;*/
+    /*width: 100%;*/
+
+
 
 }

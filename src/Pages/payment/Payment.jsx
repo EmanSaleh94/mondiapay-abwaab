@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import PhoneNumber from "../../Components/phoneNumber/PhoneNumber.jsx";
 import Container from 'react-bootstrap/Container';
 import Button from "react-bootstrap/Button";
@@ -10,6 +10,7 @@ import mondiaLogo from '../../assets/images/mondiaLogo.svg'
 import styles from './styles.module.css'
 import InstructionModal from "../../Components/instructionModal/InstructionModal.jsx";
 import SendRequestModal from "../../Components/sendRequestModal/SendRequestModal.jsx";
+import {DataContext} from "../../context/DataContext.jsx";
 
 const {
     parentContainer,
@@ -27,6 +28,15 @@ function Payment(props) {
 
     const [modalShow, setModalShow] = useState(false);
     const[showRequestedModal, setShowRequestedModal]=useState(false)
+    const {collectedData, collectData} = useContext(DataContext);
+    const[price,setPrice]=useState([])
+    const[discountPrice, setDiscountPrice]=useState()
+
+    useEffect(() => {
+        setPrice(collectedData.planDetails.Price)
+        setDiscountPrice(collectedData.planDetails.Discounted)
+    });
+
 
     return (
         <>
@@ -37,8 +47,8 @@ function Payment(props) {
                     <PhoneNumber titleInfo={'رقم المحفظة'}/>
                     <p className={priceInformation}>
                         <span>المبلغ </span>
-                        <span style={{color: `var(--faded-blue)`}}>80.0 جنيه مصري بدل من </span>
-                        <del style={{color: `red`}}> 100.0</del>
+                        <span style={{color: `var(--faded-blue)`}}>{discountPrice} جنيه مصري بدل من </span>
+                        <del style={{color: `red`}}> {price}</del>
                         <span style={{color: `var(--faded-blue)`}}> فقط على اورنچ كاش </span>
                     </p>
 

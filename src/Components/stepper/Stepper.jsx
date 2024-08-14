@@ -13,9 +13,7 @@ const {
 
 } = styles;
 
-// while working on stepper we will put and remove 2 classes
-//the active for both  stepper item and stepName
-// also the same when completed
+
 function Stepper() {
 
     const location = useLocation();
@@ -30,8 +28,6 @@ function Stepper() {
 
 
     const currentStepIndex = steps.findIndex(step => step.path === location.pathname);
-
-
 
 
     return (

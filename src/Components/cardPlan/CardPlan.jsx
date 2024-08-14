@@ -44,7 +44,6 @@ function CardPlan({backgroundColor, btnCheckColor, packageDetails}) {
 
 
     const handlePlanSelection = () => {
-        console.log("fireeeeeed")
         collectData({packageDetails})
     }
 

@@ -20,17 +20,12 @@ function SelectPlan() {
                 <p> اختر باقتك</p>
                 <p>كل باقة لها عدة مزايا لتلبي احتياجاتك</p>
                 <div className={cardWrapper}>
-                    { collectedData.program.Packages.map((entry,index)=>
-                      (  <CardPlan packageDetails={entry} key={index} backgroundColor={"--light-blue"}
-                                  btnCheckColor={"--faded-blue"}/>)
-
-                    ) }
-                    {/*<CardPlan cardHeader={"جميع المواد + مرشد أكاديمي"} height={80} backgroundColor={"--light-blue"}*/}
-                    {/*          btnCheckColor={"--faded-blue"}/>*/}
-                    {/*<CardPlan cardHeader={"مادة واحدة"} height={80} backgroundColor={"--light-green"}*/}
-                    {/*          btnCheckColor={"--teal"}/>*/}
+                    { collectedData.program.Packages.map((entry,index)=> (
+                          <CardPlan packageDetails={entry} key={index} backgroundColor={"--light-blue"}
+                                  btnCheckColor={"--faded-blue"}/>
+                        )
+                    )}
                 </div>
-
             </div>
         </>
     );

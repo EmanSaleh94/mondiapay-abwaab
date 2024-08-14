@@ -7,25 +7,25 @@ import egyFlag from "../../assets/images/egyFlag.svg";
 const egyptianMsisdnRegex = /^(\+20)?(11|12|15|10)[0-9]{8}$/;
 
 
-function PhoneNumber({titleInfo, onPhoneEntered, onNumberValidation}) {
+function PhoneNumber({titleInfo, onPhoneEntered, onNumberValidation, initialValue}) {
 
-  const [phoneNumber, setPhoneNumber] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState(initialValue || '');
   const [isValid, setIsValid] = useState(false);
 
   const handleChange = (event) => {
     const value = event.target.value;
     setPhoneNumber(value);
-    // Validate the phone number using regex
-    // const isValueValid = egyptianMsisdnRegex.test(value);
-    // console.log(isValueValid, 'isvalued')
-    setIsValid( egyptianMsisdnRegex.test(value));
-    onNumberValidation ? onNumberValidation(egyptianMsisdnRegex.test(value)) : ''
   };
 
   useEffect(() => {
     onPhoneEntered && isValid && phoneNumber.length === 10 ? onPhoneEntered(phoneNumber) : '';
   }, [isValid]);
 
+
+  useEffect(() => {
+    setIsValid(egyptianMsisdnRegex.test(phoneNumber));
+    onNumberValidation ? onNumberValidation(egyptianMsisdnRegex.test(phoneNumber)) : ''
+  }, [phoneNumber]);
 
   return (
     <>

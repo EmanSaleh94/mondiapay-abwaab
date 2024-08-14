@@ -10,17 +10,20 @@ const {selectionFieldParent, selectionGroup, expanded} = styles;
 
 function Selection({selectionHeader, options, onSelection, initialValue}) {
     const [open, setOpen] = useState(false);
-    const [inputValue, setInputValue] = useState('');
+    const [inputValue, setInputValue] = useState(initialValue || '');
 
+    useEffect(() => {
+        setInputValue(initialValue || selectionHeader);
+    }, [initialValue, selectionHeader]);
 
     const handleInputText = (event) => {
-        setInputValue(initialValue || event.target.textContent);
-        setOpen(!open)
-        onSelection ? onSelection(event.target.textContent): ''
+        const value = event.target.textContent;
+        setInputValue(value);
+        setOpen(!open);
+        if (onSelection) {
+            onSelection(value);
+        }
     };
-    useEffect(() => {
-        setInputValue(selectionHeader)
-    }, [options]);
 
     const btnStyle = {
         backgroundColor: "#e9f3ff",
@@ -29,6 +32,7 @@ function Selection({selectionHeader, options, onSelection, initialValue}) {
         display: "flex",
         justifyContent: "space-between",
     };
+
     return (
         <>
             <div className={selectionGroup}>
@@ -39,15 +43,18 @@ function Selection({selectionHeader, options, onSelection, initialValue}) {
                         aria-expanded={open}
                         style={btnStyle}
                     >
-                        <p className={open ? expanded : ""}>{inputValue === '' ? selectionHeader : inputValue}</p>
+                        <p className={open ? expanded : ""}>
+                            {inputValue || selectionHeader}
+                        </p>
                         <img src={open ? upArrow : downArrow} alt="" width={20}/>
                     </Button>
                     <Collapse in={open}>
                         <ul className="selectionList" id="example-collapse-text">
                             {options.map((entry, index) => (
-                                <li key={index} onClick={(event) => {
-                                    handleInputText(event)
-                                }}>{entry}</li>))}
+                                <li key={index} onClick={handleInputText}>
+                                    {entry}
+                                </li>
+                            ))}
                         </ul>
                     </Collapse>
                 </div>

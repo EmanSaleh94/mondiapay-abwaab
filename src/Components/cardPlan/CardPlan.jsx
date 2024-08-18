@@ -1,4 +1,4 @@
-import React, {useContext, useEffect} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import Card from "react-bootstrap/Card";
 import {CheckCircleFill} from "react-bootstrap-icons";
 
@@ -19,15 +19,20 @@ const {
     cardBodyStyle,
     cardHeaderStyle,
     delStyle,
-    footerStyle
+    footerStyle,
+    recommendedTag,
+    cardTitlePrice,
+    cardTitlePriceContainer
 } = styles
 
 
 function CardPlan({backgroundColor, btnCheckColor, packageDetails}) {
+    console.log(packageDetails, 'det')
 
     const getPlanWithSmallestPrice = (plansData) => {
         let smallestPlan = null;
         let smallestPrice = Infinity;
+        const [recommendTag, setRecommendTag] = useState(false)
 
         plansData.forEach(plan => {
             if (plan.Discounted < smallestPrice) {
@@ -51,19 +56,28 @@ function CardPlan({backgroundColor, btnCheckColor, packageDetails}) {
     return (
         <>
             <Card className={cardStyle} style={{backgroundColor: `var(${backgroundColor})`}}>
-                <Card.Header className={cardHeaderStyle}>{packageDetails.name}</Card.Header>
+                <Card.Header className={cardHeaderStyle}>{packageDetails.name}
+
+                </Card.Header>
                 <Card.Body className={cardBodyStyle}>
                     <span className={fontStyle}>ابتداء من</span>
 
                     <Card.Title className={cardTitle}>
                         <img src={orangeLogo} alt=""/>
-                        <div>
-                            <del className={delStyle}>{planWithSmallestPrice.Price}</del>
-                            <span className={priceStyle}>{planWithSmallestPrice.Discounted}</span>
+                        <div className={cardTitlePrice}>
+                            <div className={cardTitlePriceContainer}>
+                                <del className={delStyle}>{planWithSmallestPrice.Price}</del>
+                                <span className={priceStyle}>{planWithSmallestPrice.Discounted}</span>
 
-                            <p className={currencyStyle}>
-                                جنيه مصري
-                            </p>
+                                <p className={currencyStyle}>
+                                    جنيه مصري
+                                </p>
+                            </div>
+                            {packageDetails.name === 'الباقة المميزة' ? <div className={recommendedTag}>
+                                الأكثر مبيعاً
+
+                            </div> : ''}
+
 
                         </div>
 

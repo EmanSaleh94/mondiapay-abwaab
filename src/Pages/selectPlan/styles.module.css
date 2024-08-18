@@ -20,11 +20,6 @@
 }
 
 /* For screens smaller than 576px */
-@media (max-width: 575px) {
-  .cardWrapper {
-    width: 100%;
-  }
-}
 
 .selectionPlanParentStyle {
   width: 100%;
@@ -52,4 +47,27 @@
   line-height: 26px;
   font-family: "dubai light";
   margin: 0;
+}
+
+@media (max-width: 575px) {
+  .cardWrapper {
+    width: 100%;
+  }
+  .selectionPlanParentStyle p:first-child {
+    text-align: center;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 40px;
+  }
+  .selectionPlanParentStyle p:nth-child(2) {
+    color: var(--faded-gray);
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 26px;
+    font-family: "dubai light";
+    margin: 0;
+  }
 }

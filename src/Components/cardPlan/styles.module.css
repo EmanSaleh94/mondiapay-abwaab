@@ -107,15 +107,13 @@
     display: flex;
     flex-wrap: nowrap;
     justify-content: center;
+    text-align: center;
 }
 
 
 @media screen and (max-width: 1024px) {
     .cardTitlePriceContainer{
         width:70%;
-
-
-
     }
     .recommendedTag{
 
@@ -176,6 +174,12 @@
 
 
     }
+}
 
+
+@media screen and (max-width: 1025px) {
+    .cardBodyStyle{
+        min-height: 30vh;
+    }
 
 }

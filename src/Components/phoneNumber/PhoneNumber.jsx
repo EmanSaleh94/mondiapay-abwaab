@@ -3,6 +3,7 @@ import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 
 import egyFlag from "../../assets/images/egyFlag.svg";
+import Styles from "./styles.module.css";
 
 const egyptianMsisdnRegex = /^(\+20)?(11|12|15|10)[0-9]{8}$/;
 
@@ -18,7 +19,7 @@ function PhoneNumber({titleInfo, onPhoneEntered, onNumberValidation, initialValu
   };
 
   useEffect(() => {
-    onPhoneEntered && isValid && phoneNumber.length === 10 ? onPhoneEntered(phoneNumber) : '';
+    onPhoneEntered && isValid ? onPhoneEntered(phoneNumber) : '';
   }, [isValid]);
 
 
@@ -45,7 +46,7 @@ function PhoneNumber({titleInfo, onPhoneEntered, onNumberValidation, initialValu
             value={phoneNumber}
           />
         </InputGroup>
-        {!isValid && phoneNumber.length >= 10&& <p style={{ color: 'red', margin:"0", padding:"0", textAlign:"center" }}>الرقم غير صحيح</p>}
+        {!isValid && phoneNumber && <p style={{ color: 'red', margin:"0", padding:"0", textAlign:"center" }}>الرقم غير صحيح</p>}
       </div>
     </>
   );

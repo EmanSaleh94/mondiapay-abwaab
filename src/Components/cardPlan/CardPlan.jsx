@@ -1,5 +1,4 @@
-import React, {useContext, useEffect, useState} from "react";
-import Card from "react-bootstrap/Card";
+import React, {useContext, useEffect, useState} from "react";import Card from "react-bootstrap/Card";
 import {CheckCircleFill} from "react-bootstrap-icons";
 
 import styles from './styles.module.css';
@@ -27,12 +26,12 @@ const {
 
 
 function CardPlan({backgroundColor, btnCheckColor, packageDetails}) {
-    console.log(packageDetails, 'det')
+
+    const [recommendTag, setRecommendTag] = useState(false)
 
     const getPlanWithSmallestPrice = (plansData) => {
         let smallestPlan = null;
         let smallestPrice = Infinity;
-        const [recommendTag, setRecommendTag] = useState(false)
 
         plansData.forEach(plan => {
             if (plan.Discounted < smallestPrice) {
@@ -56,9 +55,7 @@ function CardPlan({backgroundColor, btnCheckColor, packageDetails}) {
     return (
         <>
             <Card className={cardStyle} style={{backgroundColor: `var(${backgroundColor})`}}>
-                <Card.Header className={cardHeaderStyle}>{packageDetails.name}
-
-                </Card.Header>
+                <Card.Header className={cardHeaderStyle}>{packageDetails.name}</Card.Header>
                 <Card.Body className={cardBodyStyle}>
                     <span className={fontStyle}>ابتداء من</span>
 
@@ -74,11 +71,8 @@ function CardPlan({backgroundColor, btnCheckColor, packageDetails}) {
                                 </p>
                             </div>
                             {packageDetails.name === 'الباقة المميزة' ? <div className={recommendedTag}>
-                                الأكثر مبيعاً
-
+                                الباقة الأفضل
                             </div> : ''}
-
-
                         </div>
 
                     </Card.Title>
@@ -91,25 +85,6 @@ function CardPlan({backgroundColor, btnCheckColor, packageDetails}) {
                         </Card.Text>
 
                     ))}
-
-
-                    {/*<Card.Text className={cardTextStyle}>*/}
-                    {/*    <CheckCircleFill color={`var(${btnCheckColor})`} className={CheckCircleFillStyle}/>*/}
-                    {/*    شاهد جميع الدروس لجميع مواد منهاجك*/}
-                    {/*</Card.Text>*/}
-
-
-                    {/*<Card.Text className={cardTextStyle}>*/}
-                    {/*    <CheckCircleFill color={`var(${btnCheckColor})`} className={CheckCircleFillStyle}/>*/}
-                    {/*    جاوب أسئلة و إختبارات جميع المواد{" "}*/}
-                    {/*</Card.Text>*/}
-
-
-                    {/*<Card.Text className={cardTextStyle}>*/}
-                    {/*    <CheckCircleFill color={`var(${btnCheckColor})`} className={CheckCircleFillStyle}/>*/}
-                    {/*    جاوب أسئلة و إختبارات جميع المواد{" "}*/}
-                    {/*</Card.Text>*/}
-
 
                 </Card.Body>
                 <Card.Footer className={footerStyle}>

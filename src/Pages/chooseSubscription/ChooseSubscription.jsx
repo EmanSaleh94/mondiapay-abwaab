@@ -5,6 +5,7 @@ import styles from './styles.module.css'
 import orangeLogo from "../../assets/images/orange.svg";
 import CardSubscription from "../../Components/cardSub/CardSubscription.jsx";
 import {DataContext} from "../../context/DataContext.jsx";
+import {useNavigate} from "react-router-dom";
 
 const {subscribeParentStyle, cardWrapper,subsTitle,subsDescription} = styles
 
@@ -12,13 +13,19 @@ function ChooseSubscription(props) {
 
     const {collectedData, collectData} = useContext(DataContext);
     const[plan , setPlan]=useState([])
-
-    // const plans= collectedData.packageDetails.plans
-
+    const navigate = useNavigate();
 
     useEffect(() => {
-       setPlan(collectedData.packageDetails.plans)
+        if(collectedData.packageDetails?.plans)
+            setPlan(collectedData.packageDetails.plans)
     }, [collectedData]);
+
+    useEffect(() => {
+        // Check if the required context data is missing
+        if (!collectedData || !collectedData.packageDetails?.plans) {
+            navigate('/');
+        }
+    });
 
     return (
         <>

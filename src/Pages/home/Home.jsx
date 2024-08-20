@@ -16,7 +16,7 @@ function Home() {
 
     return (
         <>
-            <Router>
+            <Router basename={'/abwaab'}>
                 <Nav />
                 <Stepper />
                 <Routes>

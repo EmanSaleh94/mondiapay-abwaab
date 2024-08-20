@@ -13,16 +13,22 @@
   .stepperWrapper {
     width: 70%;
     margin:auto !important;
-
   }
-
 }
+
 @media screen and (max-width: 480px) {
   .stepperWrapper {
     width: 90%;
     margin-left: 0;
     margin:auto !important;
+  }
 
+  @media screen and (max-width: 350px) {
+    .stepperWrapper {
+      width: 100%;
+      margin-left: 0;
+      margin: auto !important;
+    }
   }
 }
 .stepperItem {
